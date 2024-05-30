@@ -15,4 +15,5 @@ namespace AquaCareAPI.Data
         public DbSet<Indicador> Indicadores { get; set; }
         public DbSet<Usuario> Usuarios { get; set; }
     }
+
 }
