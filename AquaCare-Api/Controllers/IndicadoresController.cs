@@ -2,7 +2,6 @@
 using Microsoft.EntityFrameworkCore;
 using AquaCare_Api.Model;
 using AquaCareAPI.Data;
-
 namespace AquaCareAPI.Controllers
 {
     [Route("api/[controller]")]
@@ -16,16 +15,18 @@ namespace AquaCareAPI.Controllers
             _context = context;
         }
 
+        // GET: api/Indicadores
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Indicador>>> GetIndicadores()
         {
-            return await _context.Indicadores.Include(i => i.Local).ToListAsync();
+            return await _context.Indicadores.ToListAsync();
         }
 
+        // GET: api/Indicadores/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Indicador>> GetIndicador(int id)
         {
-            var indicador = await _context.Indicadores.Include(i => i.Local).FirstOrDefaultAsync(i => i.CodigoIndicador == id);
+            var indicador = await _context.Indicadores.FindAsync(id);
 
             if (indicador == null)
             {
@@ -35,6 +36,7 @@ namespace AquaCareAPI.Controllers
             return indicador;
         }
 
+        // PUT: api/Indicadores/5
         [HttpPut("{id}")]
         public async Task<IActionResult> PutIndicador(int id, Indicador indicador)
         {
@@ -64,15 +66,24 @@ namespace AquaCareAPI.Controllers
             return NoContent();
         }
 
+        // POST: api/Indicadores
         [HttpPost]
         public async Task<ActionResult<Indicador>> PostIndicador(Indicador indicador)
         {
+            var existingLocal = await _context.Locais.FindAsync(indicador.CodigoLocal);
+            if (existingLocal == null)
+            {
+                return BadRequest("Local não encontrado.");
+            }
+
+            indicador.Local = existingLocal;
             _context.Indicadores.Add(indicador);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction(nameof(GetIndicador), new { id = indicador.CodigoIndicador }, indicador);
         }
 
+        // DELETE: api/Indicadores/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteIndicador(int id)
         {

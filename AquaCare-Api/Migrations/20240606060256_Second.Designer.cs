@@ -12,7 +12,7 @@ using Oracle.EntityFrameworkCore.Metadata;
 namespace AquaCare_Api.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20240606010744_Second")]
+    [Migration("20240606060256_Second")]
     partial class Second
     {
         /// <inheritdoc />
@@ -29,19 +29,22 @@ namespace AquaCare_Api.Migrations
                 {
                     b.Property<int>("CodigoCidade")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("NUMBER(10)");
+                        .HasColumnType("NUMBER(10)")
+                        .HasColumnName("CODIGO_CIDADE");
 
                     OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CodigoCidade"));
 
                     b.Property<string>("Estado")
                         .IsRequired()
                         .HasMaxLength(100)
-                        .HasColumnType("NVARCHAR2(100)");
+                        .HasColumnType("NVARCHAR2(100)")
+                        .HasColumnName("ESTADO");
 
                     b.Property<string>("Nome")
                         .IsRequired()
                         .HasMaxLength(100)
-                        .HasColumnType("NVARCHAR2(100)");
+                        .HasColumnType("NVARCHAR2(100)")
+                        .HasColumnName("NOME");
 
                     b.HasKey("CodigoCidade");
 
@@ -52,30 +55,38 @@ namespace AquaCare_Api.Migrations
                 {
                     b.Property<int>("CodigoIndicador")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("NUMBER(10)");
+                        .HasColumnType("NUMBER(10)")
+                        .HasColumnName("CODIGO_INDICADOR");
 
                     OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CodigoIndicador"));
 
                     b.Property<int>("CodigoLocal")
-                        .HasColumnType("NUMBER(10)");
+                        .HasColumnType("NUMBER(10)")
+                        .HasColumnName("CODIGO_LOCAL");
 
                     b.Property<DateTime>("DataHoraMedicao")
-                        .HasColumnType("TIMESTAMP(7)");
+                        .HasColumnType("TIMESTAMP(7)")
+                        .HasColumnName("DATA_HORA_MEDICAO");
 
                     b.Property<int>("NivelColiformes")
-                        .HasColumnType("NUMBER(10)");
+                        .HasColumnType("NUMBER(10)")
+                        .HasColumnName("NIVEL_COLIFORMES");
 
                     b.Property<decimal>("NivelOxigenioDissolvido")
-                        .HasColumnType("DECIMAL(18, 2)");
+                        .HasColumnType("DECIMAL(18, 2)")
+                        .HasColumnName("NIVEL_OXIGENIO_DISSOLVIDO");
 
                     b.Property<decimal>("NivelPH")
-                        .HasColumnType("DECIMAL(18, 2)");
+                        .HasColumnType("DECIMAL(18, 2)")
+                        .HasColumnName("NIVEL_PH");
 
                     b.Property<decimal>("NivelTemperatura")
-                        .HasColumnType("DECIMAL(18, 2)");
+                        .HasColumnType("DECIMAL(18, 2)")
+                        .HasColumnName("NIVEL_TEMPERATURA");
 
                     b.Property<decimal>("NivelTurbidez")
-                        .HasColumnType("DECIMAL(18, 2)");
+                        .HasColumnType("DECIMAL(18, 2)")
+                        .HasColumnName("NIVEL_TURBIDEZ");
 
                     b.HasKey("CodigoIndicador");
 
@@ -88,35 +99,40 @@ namespace AquaCare_Api.Migrations
                 {
                     b.Property<int>("CodigoLocal")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("NUMBER(10)");
+                        .HasColumnType("NUMBER(10)")
+                        .HasColumnName("CODIGO_LOCAL");
 
                     OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CodigoLocal"));
 
                     b.Property<int>("CodigoCidade")
-                        .HasColumnType("NUMBER(10)");
+                        .HasColumnType("NUMBER(10)")
+                        .HasColumnName("CODIGO_CIDADE");
 
                     b.Property<string>("Descricao")
                         .IsRequired()
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .HasMaxLength(250)
+                        .HasColumnType("NVARCHAR2(250)")
+                        .HasColumnName("DESCRICAO");
 
                     b.Property<string>("Latitude")
                         .IsRequired()
                         .HasMaxLength(50)
-                        .HasColumnType("NVARCHAR2(50)");
+                        .HasColumnType("NVARCHAR2(50)")
+                        .HasColumnName("LATITUDE");
 
                     b.Property<string>("Longitude")
                         .IsRequired()
                         .HasMaxLength(50)
-                        .HasColumnType("NVARCHAR2(50)");
+                        .HasColumnType("NVARCHAR2(50)")
+                        .HasColumnName("LONGITUDE");
 
                     b.Property<string>("Nome")
                         .IsRequired()
                         .HasMaxLength(100)
-                        .HasColumnType("NVARCHAR2(100)");
+                        .HasColumnType("NVARCHAR2(100)")
+                        .HasColumnName("NOME");
 
                     b.HasKey("CodigoLocal");
-
-                    b.HasIndex("CodigoCidade");
 
                     b.ToTable("AQUACARE_LOCAL");
                 });
@@ -125,24 +141,28 @@ namespace AquaCare_Api.Migrations
                 {
                     b.Property<int>("CodigoUsuario")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("NUMBER(10)");
+                        .HasColumnType("NUMBER(10)")
+                        .HasColumnName("CODIGO_USUARIO");
 
                     OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CodigoUsuario"));
 
                     b.Property<string>("Email")
                         .IsRequired()
                         .HasMaxLength(100)
-                        .HasColumnType("NVARCHAR2(100)");
+                        .HasColumnType("NVARCHAR2(100)")
+                        .HasColumnName("EMAIL");
 
                     b.Property<string>("Nome")
                         .IsRequired()
                         .HasMaxLength(100)
-                        .HasColumnType("NVARCHAR2(100)");
+                        .HasColumnType("NVARCHAR2(100)")
+                        .HasColumnName("NOME");
 
                     b.Property<string>("Senha")
                         .IsRequired()
                         .HasMaxLength(100)
-                        .HasColumnType("NVARCHAR2(100)");
+                        .HasColumnType("NVARCHAR2(100)")
+                        .HasColumnName("SENHA");
 
                     b.HasKey("CodigoUsuario");
 
@@ -158,17 +178,6 @@ namespace AquaCare_Api.Migrations
                         .IsRequired();
 
                     b.Navigation("Local");
-                });
-
-            modelBuilder.Entity("AquaCare_Api.Model.Local", b =>
-                {
-                    b.HasOne("AquaCare_Api.Model.Cidade", "Cidade")
-                        .WithMany()
-                        .HasForeignKey("CodigoCidade")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Cidade");
                 });
 #pragma warning restore 612, 618
         }

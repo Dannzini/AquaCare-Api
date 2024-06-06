@@ -2,6 +2,9 @@
 using Microsoft.EntityFrameworkCore;
 using AquaCare_Api.Model;
 using AquaCareAPI.Data;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace AquaCareAPI.Controllers
 {
@@ -16,16 +19,18 @@ namespace AquaCareAPI.Controllers
             _context = context;
         }
 
+        // GET: api/Locais
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Local>>> GetLocais()
         {
-            return await _context.Locais.Include(l => l.Cidade).ToListAsync();
+            return await _context.Locais.ToListAsync();
         }
 
+        // GET: api/Locais/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Local>> GetLocal(int id)
         {
-            var local = await _context.Locais.Include(l => l.Cidade).FirstOrDefaultAsync(l => l.CodigoLocal == id);
+            var local = await _context.Locais.FindAsync(id);
 
             if (local == null)
             {
@@ -35,6 +40,7 @@ namespace AquaCareAPI.Controllers
             return local;
         }
 
+        // PUT: api/Locais/5
         [HttpPut("{id}")]
         public async Task<IActionResult> PutLocal(int id, Local local)
         {
@@ -64,6 +70,7 @@ namespace AquaCareAPI.Controllers
             return NoContent();
         }
 
+        // POST: api/Locais
         [HttpPost]
         public async Task<ActionResult<Local>> PostLocal(Local local)
         {
@@ -73,6 +80,7 @@ namespace AquaCareAPI.Controllers
             return CreatedAtAction(nameof(GetLocal), new { id = local.CodigoLocal }, local);
         }
 
+        // DELETE: api/Locais/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteLocal(int id)
         {
