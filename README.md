@@ -12,7 +12,7 @@
 
 # Aquacare - Monitoramento da Qualidade da Água
 
-A Aquacare é uma solução inovadora para o monitoramento da qualidade da água, utilizando dispositivos de IoT (Internet das Coisas) e tecnologia de nuvem. Com a capacidade de armazenar e acessar dados em tempo real por meio de um aplicativo móvel, a Aquacare oferece uma maneira conveniente e acessível para empresas, governos e organizações monitorarem a qualidade da água em diversos ambientes.
+A Aquacare é uma solução inovadora para o monitoramento da qualidade da água, utilizando dispositivos de IoT (Internet das Coisas) e tecnologia de nuvem. Com a capacidade de armazenar e acessar dados em tempo real por meio de um aplicativo móvel, a Aquacare oferece uma maneira conveniente e acessível para empresas, governos e organizações monitorarem a qualidade da água em diversos ambientes, desde portos e represas até áreas afetadas por desastres naturais.
 
 ## Apresentação
 
