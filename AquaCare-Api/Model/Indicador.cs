@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace AquaCare_Api.Model
 {
-    [Table("Indicadores")]
+    [Table("AQUACARE_INDICADOR")]
     public class Indicador
     {
         [Key]

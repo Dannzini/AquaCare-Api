@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace AquaCare_Api.Model
 {
-    [Table("Cidades")]
+    [Table("AQUACARE_CIDADE")]
     public class Cidade
     {
         [Key]

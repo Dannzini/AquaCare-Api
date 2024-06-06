@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace AquaCare_Api.Model
 {
-    [Table("Usuarios")]
+    [Table("AQUACARE_USUARIO")]
     public class Usuario
     {
         [Key]
