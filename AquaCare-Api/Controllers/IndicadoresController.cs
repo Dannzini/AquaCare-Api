@@ -19,21 +19,21 @@ namespace AquaCareAPI.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Indicador>>> GetIndicadores()
         {
-            return await _context.Indicadores.ToListAsync();
+            return await _context.Indicadores.Include(x=>x.Local).ToListAsync();
         }
 
         // GET: api/Indicadores/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Indicador>> GetIndicador(int id)
+        public  ActionResult<Indicador> GetIndicador(int id)
         {
-            var indicador = await _context.Indicadores.FindAsync(id);
+            var indicador =_context.Indicadores.Include(x => x.Local).Where(x=>x.CodigoIndicador==id);
 
             if (indicador == null)
             {
                 return NotFound();
             }
 
-            return indicador;
+            return Ok(indicador);
         }
 
         // PUT: api/Indicadores/5
