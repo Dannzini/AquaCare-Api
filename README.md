@@ -1,5 +1,5 @@
-## Enterprise Application Development
-### Professor: Caio Halbert Jacinto
+## Enterprise Application Development / Professor: Caio Halbert Jacinto
+
 
 ### Grupo:
 
@@ -48,6 +48,9 @@ A Aquacare oferece facilidade de uso por meio de seu aplicativo móvel, com vant
 - **Acesso remoto:** permitindo o acesso aos dados de qualquer lugar com conexão à internet.
 - **Notificações em tempo real:** possibilitando alertas sobre eventos importantes (funcionalidade futura).
 - **Personalização:** os usuários podem personalizar as configurações e alertas de acordo com suas preferências individuais (funcionalidade futura).
+
+- # Passo a passo de como executar o projeto e testar a aplicação
+[![Assista o vídeo](https://img.youtube.com/vi/h-8f4qFwNWY/0.jpg)](https://www.youtube.com/watch?v=h-8f4qFwNWY&ab_channel=Dannzini)
 
 - # Sequência de Endpoints para Teste:
 
