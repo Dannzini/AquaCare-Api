@@ -10,7 +10,8 @@
 | Joederson Oliveira Pereira       | 97192 | 2TDSPT  |
 | Mário Ito Bocchini               | 96950 | 2TDSPT  |
 
-# Aquacare - Monitoramento da Qualidade da Água
+
+# ![Aquacare Logo](https://cdn.discordapp.com/attachments/1154885271146467420/1248801995058319454/logo_aquacare_1.png?ex=6664fcfd&is=6663ab7d&hm=109ef2655521fae40139dd83da80f14c27aca82d54f7f6e4b62f2ffd01ad349c&) Aquacare - Monitoramento da Qualidade da Água 
 
 A Aquacare é uma solução inovadora para o monitoramento da qualidade da água, utilizando dispositivos de IoT (Internet das Coisas) e tecnologia de nuvem. Com a capacidade de armazenar e acessar dados em tempo real por meio de um aplicativo móvel, a Aquacare oferece uma maneira conveniente e acessível para empresas, governos e organizações monitorarem a qualidade da água em diversos ambientes, desde portos e represas até áreas afetadas por desastres naturais.
 
