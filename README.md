@@ -50,7 +50,7 @@ A Aquacare oferece facilidade de uso por meio de seu aplicativo móvel, com vant
 - **Personalização:** os usuários podem personalizar as configurações e alertas de acordo com suas preferências individuais (funcionalidade futura).
 
 - # Passo a passo de como executar o projeto e testar a aplicação
-[![Assista o vídeo](https://img.youtube.com/vi/h-8f4qFwNWY/0.jpg)](https://www.youtube.com/watch?v=h-8f4qFwNWY&ab_channel=Dannzini)
+[![Assista o vídeo](https://img.youtube.com/vi/h-8f4qFwNWY/0.jpg)](https://youtu.be/h-8f4qFwNWY)
 
 - # Sequência de Endpoints para Teste:
 
